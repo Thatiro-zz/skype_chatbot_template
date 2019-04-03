@@ -64,7 +64,6 @@ Here you have the current labels with their English value:
 
 For a default behaviour, the only requisite is to fill the basic configuration (more information on `/conf/README.md`). There are some extra configuration parameters in the configuration files that allow you to modify the basic-behaviour.
 
-
 **Custom Behaviours**
 
 If you need to customize the bot flow you need to extend the class `SkypeConnector` including it inside `/lib` folder (does not exists by default). This class must extend the default SkypeConnector, then you can override all the parent methods.
@@ -89,13 +88,11 @@ For example, when the bot is configured to escalate with an agent starts a conve
 	}
 ```
 
-
 **HyperChat escalation by no-result answer**
 
 If your bot needs integration with HyperChat, fill the chat configuration at `/conf/conf-path/chat.php` and subscribe to the following events on your Backstage instance: `invitations:new`, `invitations:accept`, `forever:alone`, `chats:close`, `messages:new`. When subscribing the events in Backstage you've to point to the `/server.php` file in order to handle the events from HyperChat.
 
 Configuration parameter `triesBeforeEscalation` sets the number of no-results answers after the bot should escalate to an agent.
-
 
 **Escalation with FAQ**
 
